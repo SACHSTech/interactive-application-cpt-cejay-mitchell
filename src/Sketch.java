@@ -2,10 +2,12 @@ import processing.core.PApplet;
 
 /**
  * Template for programs with Processing graphics output.
- * @author Your Name
+ * @author Mitchell Jaja & Cejay Baxter
  */
 public class Sketch extends PApplet {
     int roadColour = color(255);
+    int carX = 394; // Center lane
+    int carY = 750; // Bottom of screen
 
     public static void main(String[] args) {
         PApplet.main("Sketch");
@@ -18,106 +20,22 @@ public class Sketch extends PApplet {
 
     @Override
     public void setup() {
+        generateBackground();
+        drawCar();
+    }
+
+    public void generateBackground(){
         background(128, 128, 128);
         fill(roadColour);
-        // rect(304, 0, 8, 900); // First lane line
-        // rect(485, 0, 8, 900);
 
         noStroke();
 
-        // Dash 1
-        rect(304, 0, 11, 20);
-        rect(485, 0, 11, 20);
+        for (int y = 0; y < height; y += 40) {
+            rect(304, y, 11, 20); // Left lane dashes
+            rect(485, y, 11, 20); // Right lane dashes
+        }
 
-        // 2
-        rect(304, 40, 11, 20);
-        rect(485, 40, 11, 20);
-
-        // 3
-        rect(304, 80, 11, 20);
-        rect(485, 80, 11, 20);
-
-        // 4
-        rect(304, 120, 11, 20);
-        rect(485, 120, 11, 20);
-
-        // 5
-        rect(304, 160, 11, 20);
-        rect(485, 160, 11, 20);
-
-        // 6
-        rect(304, 200, 11, 20);
-        rect(485, 200, 11, 20);
-
-        // 7
-        rect(304, 240, 11, 20);
-        rect(485, 240, 11, 20);
-
-        // 8
-        rect(304, 280, 11, 20);
-        rect(485, 280, 11, 20);
-
-        // 9
-        rect(304, 320, 11, 20);
-        rect(485, 320, 11, 20);
-
-        // 10
-        rect(304, 360, 11, 20);
-        rect(485, 360, 11, 20);
-
-        // 11
-        rect(304, 400, 11, 20);
-        rect(485, 400, 11, 20);
-
-        // 12
-        rect(304, 440, 11, 20);
-        rect(485, 440, 11, 20);
-
-        // 13
-        rect(304, 480, 11, 20);
-        rect(485, 480, 11, 20);
-
-        // 14
-        rect(304, 520, 11, 20);
-        rect(485, 520, 11, 20);
-
-        // 15
-        rect(304, 560, 11, 20);
-        rect(485, 560, 11, 20);
-
-        // 16
-        rect(304, 600, 11, 20);
-        rect(485, 600, 11, 20);
-
-        // 17
-        rect(304, 640, 11, 20);
-        rect(485, 640, 11, 20);
-
-        // 18
-        rect(304, 680, 11, 20);
-        rect(485, 680, 11, 20);
-
-        // 19
-        rect(304, 720, 11, 20);
-        rect(485, 720, 11, 20);
-
-        // 20
-        rect(304, 760, 11, 20);
-        rect(485, 760, 11, 20);
-
-        // 21
-        rect(304, 800, 11, 20);
-        rect(485, 800, 11, 20);
-
-        // 22
-        rect(304, 840, 11, 20);
-        rect(485, 840, 11, 20);
-
-        // 23
-        rect(304, 880, 11, 20);
-        rect(485, 880, 11, 20);
-
-        // Draw green grass borders
+        // Green Grass
         fill(0, 180, 0);
         noStroke();
         rect(0, 0, 133, 900);
@@ -128,8 +46,33 @@ public class Sketch extends PApplet {
         rect(0, 0, 133, 900);
         rect(667, 0, 133, 900);
 
-        fill(100,100,0);
-        line(133,900,133,0);
+        // Borders
+        stroke(255,255,0);
+        strokeWeight(7);
+        line(133,0,133,900);
+        line(667,0,667,900);
+    }
+
+    public void drawCar(){
+        noStroke();
+        
+        // Tires (Black rectangles)
+        fill(0);
+        rect(carX - 25, carY - 20, 8, 15);  // Front Left
+        rect(carX + 17, carY - 20, 8, 15);  // Front Right
+        rect(carX - 27, carY + 15, 10, 18); // Rear Left
+        rect(carX + 17, carY + 15, 10, 18); // Rear Right
+
+        // Main Car Body (Orange rectangle)
+        fill(255, 100, 0); 
+        rect(carX - 20, carY - 20, 40, 55); 
+        
+        // Pointy Nose (Triangle)
+        triangle(carX - 20, carY - 20, carX + 20, carY - 20, carX, carY - 40);
+
+        // Windshield (Dark box)
+        fill(30, 30, 50);
+        rect(carX - 12, carY - 10, 24, 15);
     }
 
     @Override
