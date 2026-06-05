@@ -30,6 +30,14 @@ public class Sketch extends PApplet {
         
     }
 
+    @Override
+    public void draw() {
+        moveBackground();
+        drawRoad();
+        moveCar();
+        drawCar();
+    }
+
     public void generateBackground(){
         background(128, 128, 128);
         fill(roadColour);
@@ -80,15 +88,6 @@ public class Sketch extends PApplet {
         rect(carX - 12, carY - 10, 24, 15);
     }
 
-    @Override
-    public void draw() {
-        moveBackground();
-        drawRoad();
-        moveCar();
-        drawCar();
-
-    }
-
     private void drawRoad() {
         background(128,128, 128);
         fill(roadColour);
@@ -121,25 +120,25 @@ public class Sketch extends PApplet {
     private void moveCar() {
         if (carX < targetX) {
             carX += slideSpeed;
-            if (carX > targetX) carX = targetX; // Lock it to prevent overshooting
+            if (carX > targetX) carX = targetX;
         } else if (carX > targetX) {
             carX -= slideSpeed;
-            if (carX < targetX) carX = targetX; // Lock it to prevent overshooting
+            if (carX < targetX) carX = targetX;
         }
     }
 
     public void keyPressed() {
-        if (keyCode == "A") {
+        if (key == 'a' || key == 'A') {
             if (targetX == 394) {
-                targetX = 218; // Move from Center to Left
+                targetX = 218; // Center to Left
             } else if (targetX == 570) {
-                targetX = 394; // Move from Right to Center
+                targetX = 394; // Right to Center
             }
-        } else if (keyCode == "D") {
+        } else if (key == 'd' || key == 'D') {
             if (targetX == 394) {
-                targetX = 570; // Move from Center to Right
+                targetX = 570; // Center to Right
             } else if (targetX == 218) {
-                targetX = 394; // Move from Left to Center
+                targetX = 394; // Left to Center
             }
         }
     }
