@@ -6,8 +6,13 @@ import processing.core.PApplet;
  */
 public class Sketch extends PApplet {
     int roadColour = color(255);
+    
     int carX = 394; // Center lane
     int carY = 750; // Bottom of screen
+
+    int targetX = 394;
+    int slideSpeed = 12;
+
     int roadY = 0;
     int roadSpeed = 5;
 
@@ -79,7 +84,7 @@ public class Sketch extends PApplet {
     public void draw() {
         moveBackground();
         drawRoad();
-    
+        moveCar();
         drawCar();
 
     }
@@ -110,6 +115,32 @@ public class Sketch extends PApplet {
         roadY += roadSpeed;
         if (roadY >= 40) {
         roadY = 0;
+        }
+    }
+
+    private void moveCar() {
+        if (carX < targetX) {
+            carX += slideSpeed;
+            if (carX > targetX) carX = targetX; // Lock it to prevent overshooting
+        } else if (carX > targetX) {
+            carX -= slideSpeed;
+            if (carX < targetX) carX = targetX; // Lock it to prevent overshooting
+        }
+    }
+
+    public void keyPressed() {
+        if (keyCode == "A") {
+            if (targetX == 394) {
+                targetX = 218; // Move from Center to Left
+            } else if (targetX == 570) {
+                targetX = 394; // Move from Right to Center
+            }
+        } else if (keyCode == "D") {
+            if (targetX == 394) {
+                targetX = 570; // Move from Center to Right
+            } else if (targetX == 218) {
+                targetX = 394; // Move from Left to Center
+            }
         }
     }
 
