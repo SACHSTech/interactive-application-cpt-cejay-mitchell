@@ -38,35 +38,6 @@ public class Sketch extends PApplet {
         drawCar();
     }
 
-    public void generateBackground(){
-        background(128, 128, 128);
-        fill(roadColour);
-
-        noStroke();
-
-        for (int y = 0; y < height; y += 40) {
-            rect(304, y, 11, 20); // Left lane dashes
-            rect(485, y, 11, 20); // Right lane dashes
-        }
-
-        // Green Grass
-        fill(0, 180, 0);
-        noStroke();
-        rect(0, 0, 133, 900);
-        rect(667, 0, 133, 900);
-
-        fill(0, 180, 0);
-        noStroke();
-        rect(0, 0, 133, 900);
-        rect(667, 0, 133, 900);
-
-        // Borders
-        stroke(255,255,0);
-        strokeWeight(7);
-        line(133,0,133,900);
-        line(667,0,667,900);
-    }
-
     public void drawCar(){
         noStroke();
         
@@ -131,7 +102,7 @@ public class Sketch extends PApplet {
         if (key == 'a' || key == 'A') {
             if (targetX == 394) {
                 targetX = 218; // Center to Left
-            } else if (targetX == 570) {
+            } else if (targetX == 570) { 
                 targetX = 394; // Right to Center
             }
         } else if (key == 'd' || key == 'D') {
