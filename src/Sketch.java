@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 
 /**
@@ -17,6 +18,8 @@ public class Sketch extends PApplet {
     int roadY = 0;
     int roadSpeed = 5;
 
+    PImage redCar;
+
     public static void main(String[] args) {
         PApplet.main("Sketch");
     }
@@ -28,9 +31,7 @@ public class Sketch extends PApplet {
 
     @Override
     public void setup() {        
-
-
-
+        redCar = loadImage("RED2.png");
     }
 
     @Override
@@ -39,6 +40,12 @@ public class Sketch extends PApplet {
         drawRoad();
         moveCar();
         drawCar();
+        carD();
+    }
+
+    public void carD(){
+        imageMode(CENTER);
+        image(redCar, 400, 400);
     }
 
     public void drawCar(){
