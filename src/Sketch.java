@@ -1,5 +1,6 @@
 import processing.core.PApplet;
 
+
 /**
  * Template for programs with Processing graphics output.
  * @author Mitchell & Cejay
@@ -26,8 +27,10 @@ public class Sketch extends PApplet {
     }
 
     @Override
-    public void setup() {
-        
+    public void setup() {        
+
+
+
     }
 
     @Override
