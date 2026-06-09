@@ -1,19 +1,12 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/wPuP5asc)
 # ICS3U CPT – Interactive Processing Project
 
-This repository contains your ICS3U Culminating Performance Task (CPT).
 
-### Start here:
-Please read the full project instructions in **[INSTRUCTIONS.md](INSTRUCTIONS.md)**.
+## 📸 Program Screenshot
+<img width="798" height="922" alt="Screenshot 2026-06-09 at 5 22 26 PM" src="https://github.com/user-attachments/assets/b1de2aae-2108-463a-b7f3-d77d932e85ce" />
 
-Assessment criteria for this project are described in **[ASSESSMENT.md](ASSESSMENT.md)**.
 
-Once you are ready to submit, replace the contents of this README.md file with:
+---
 
-- a screenshot of your program in action
-- a brief description of your program
-- how the user interacts with it
-- any known limitations or incomplete features
-- an attribution section for any external assets used
-
-This README will be assessed as part of the project professionalism mark.
+## 🚘 Program Description
+**Fast and Ferocious** is an arcade-style, vertical endless driving game built using the Processing library in Java. The player controls a high-speed vehicle navigating a busy three-lane highway, attempting to dodge oncoming red obstacles for as long as possible. 
