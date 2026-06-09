@@ -10,3 +10,17 @@
 
 ## 🚘 Program Description
 **Fast and Ferocious** is an arcade-style, vertical endless driving game built using the Processing library in Java. The player controls a high-speed vehicle navigating a busy three-lane highway, attempting to dodge oncoming red obstacles for as long as possible. 
+
+The game features dynamic **difficulty scaling**:
+* Every time you successfully pass an obstacle, your score increases by **100 points**.
+* Every **500 points**, the game transitions to a harder difficulty level.
+* With each new level, the highway lines speed up and the obstacle speeds increase, demanding faster reflexes from the driver.
+
+---
+
+## 🕹️ How to Interact
+The game uses simple, responsive keyboard inputs to control the vehicle:
+
+* **Move Left:** Press the **`A`** key to smoothly slide one lane to the left.
+* **Move Right:** Press the **`D`** key to smoothly slide one lane to the right.
+* **Restart Game:** If you crash into an obstacle, the game transitions to a "Game Over" screen. Press the **`SPACEBAR`** to reset your score, clear the board, reset the difficulty, and get back on the road.
