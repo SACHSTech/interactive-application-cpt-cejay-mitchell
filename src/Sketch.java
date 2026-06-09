@@ -48,6 +48,7 @@ public class Sketch extends PApplet {
 
             moveBackground();
             drawRoad();
+            drawControls();
 
             handleObstacles();
             checkCollision();
@@ -71,6 +72,21 @@ public class Sketch extends PApplet {
 
             text("Press SPACE to restart", width / 2, height / 2 + 120);
         }
+    }
+
+    void drawControls() {
+
+        fill(255);
+        textAlign(CENTER);
+        textSize(20);
+
+        text("Press A", 66, 380);
+        text("to move", 66, 410);
+        text("LEFT", 66, 440);
+
+        text("Press D", 733, 380);
+        text("to move", 733, 410);
+        text("RIGHT", 733, 440);
     }
 
     // Score counter
