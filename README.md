@@ -24,3 +24,12 @@ The game uses simple, responsive keyboard inputs to control the vehicle:
 * **Move Left:** Press the **`A`** key to smoothly slide one lane to the left.
 * **Move Right:** Press the **`D`** key to smoothly slide one lane to the right.
 * **Restart Game:** If you crash into an obstacle, the game transitions to a "Game Over" screen. Press the **`SPACEBAR`** to reset your score, clear the board, reset the difficulty, and get back on the road.
+
+---
+
+## ⚠️ Known Limitations & Incomplete Features
+While the core loop of *Fast and Ferocious* is fully playable, the current build has a few limitations:
+* **Basic Collision Boxes:** Collision detection uses simplified absolute distance bounding boxes (`abs()`). At extremely high difficulty speeds, collisions might occasionally feel a bit tight or slightly not precise.
+* **Visual Variety:** All oncoming obstacles use the exact same red rectangle asset. There are currently no power-ups (like shields or score multipliers) or different obstacle types.
+* **Audio Assets:** The game currently runs completely silently; there are no background music tracks or crash sound effects implemented yet.
+
